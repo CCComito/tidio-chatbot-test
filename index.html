@@ -32,15 +32,39 @@
       color: #666;
       font-size: 18px;
     }
+    #loginButton {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    #loginButton:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>OGBC Automated Assistant Test</h1>
     <p>Welcome to the OGBC Automated Assistant</p>
+    <!-- Simulate login button -->
+    <button id="loginButton">Login</button>
   </div>
 
   <!-- Tidio Chatbot Script -->
   <script src="//code.tidio.co/l6rdvexnylodppscqidqhgjbbmno10mf.js" async></script>
+
+  <!-- JavaScript to reset chat on login -->
+  <script>
+    document.getElementById("loginButton").addEventListener("click", function() {
+        // Clears chat history when the user clicks login
+        TidioChatApi.clear();
+        // Optionally, show the chat widget again if it was hidden
+        TidioChatApi.show();
+    });
+  </script>
 </body>
 </html>
